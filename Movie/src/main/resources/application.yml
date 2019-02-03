@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: movie
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri: http://localhost:8030
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:pass@localhost:8760/eureka,http://admin:pass@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+
+logging:
+  level:
+    movie.feign.UserFeignClient: debug
+
+
+
+
+---
+server:
+  port: 8010
+spring:
+  profiles: movie1
+
+---
+server:
+  port: 8020
+spring:
+  profiles: movie2

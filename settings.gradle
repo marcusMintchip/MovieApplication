@@ -1,0 +1,11 @@
+rootProject.name = 'MovieApplication'
+include 'User'
+include 'Movie'
+include 'Discovery'
+include 'Configuration'
+include 'Configuration'
+include 'Gateway'
+include 'Gateway'
+include 'CloudGateway'
+include 'Sleuth'
+
